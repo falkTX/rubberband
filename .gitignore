@@ -1,0 +1,7 @@
+*.o
+Makefile
+bin/
+config.log
+config.status
+lib
+
