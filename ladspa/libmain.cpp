@@ -32,4 +32,9 @@ const LADSPA_Descriptor *ladspa_descriptor(unsigned long index)
     return RubberBandPitchShifter::getDescriptor(index);
 }
 
+const LV2_Descriptor *lv2_descriptor(uint32_t index)
+{
+    return RubberBandPitchShifter::getLV2Descriptor(index);
+}
+
 }

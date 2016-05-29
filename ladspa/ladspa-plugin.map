@@ -1,4 +1,4 @@
 {
-	global: ladspa_descriptor;
+	global: l*_descriptor;
 	local: *;
 };

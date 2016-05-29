@@ -25,6 +25,7 @@
 #define _RUBBERBAND_PITCH_SHIFTER_H_
 
 #include <ladspa.h>
+#include <lv2.h>
 
 #include "base/RingBuffer.h"
 
@@ -36,7 +37,8 @@ class RubberBandPitchShifter
 {
 public:
     static const LADSPA_Descriptor *getDescriptor(unsigned long index);
-    
+    static const LV2_Descriptor *getLV2Descriptor(uint32_t index);
+
 protected:
     RubberBandPitchShifter(int sampleRate, size_t channels);
     ~RubberBandPitchShifter();
@@ -76,6 +78,13 @@ protected:
     static void run(LADSPA_Handle, unsigned long);
     static void deactivate(LADSPA_Handle);
     static void cleanup(LADSPA_Handle);
+
+    static const LV2_Descriptor lv2DescriptorMono;
+    static const LV2_Descriptor lv2DescriptorStereo;
+
+    static LV2_Handle lv2_instantiate(const LV2_Descriptor *, double, const char *, const LV2_Feature *const *);
+    static void lv2_connectPort(LV2_Handle, uint32_t, void *);
+    static void lv2_run(LV2_Handle, uint32_t);
 
     void activateImpl();
     void runImpl(unsigned long);

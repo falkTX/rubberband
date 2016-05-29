@@ -1,0 +1,237 @@
+@prefix doap:   <http://usefulinc.com/ns/doap#>.
+@prefix foaf:   <http://xmlns.com/foaf/0.1/>.
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#>.
+@prefix mod:    <http://moddevices.com/ns/mod#>.
+@prefix pprops: <http://lv2plug.in/ns/ext/port-props#>.
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+
+<http://www.breakfastquay.com/rubberband#Mono>
+a lv2:Plugin, lv2:PitchPlugin;
+
+doap:name "Rubberband (Mono)";
+doap:license <http://usefulinc.com/doap/licenses/gpl>;
+
+doap:developer [
+    foaf:name "Chris Cannam";
+    foaf:homepage <>;
+    foaf:mbox <>;
+];
+
+doap:maintainer [
+    foaf:name "MOD Team";
+    foaf:homepage <http://moddevices.com>;
+    foaf:mbox <mailto:devel@moddevices.com>;
+];
+
+mod:brand "MOD";
+mod:label "Rubberband";
+
+lv2:minorVersion 8;
+lv2:microVersion 2;
+rdfs:comment """
+Time-stretching and pitch-shifting plugin. Mono version.
+""";
+
+lv2:port [
+  a lv2:ControlPort, lv2:OutputPort;
+  lv2:index 0;
+  lv2:symbol "latency";
+  lv2:name "Latency";
+  lv2:designation lv2:latency;
+  lv2:portProperty lv2:integer, lv2:reportsLatency;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 1;
+  lv2:symbol "cents";
+  lv2:name "Cents";
+  lv2:default 0;
+  lv2:minimum -100;
+  lv2:maximum 100;
+  lv2:portProperty lv2:integer;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 2;
+  lv2:symbol "semitones";
+  lv2:name "Semitones";
+  lv2:default 0;
+  lv2:minimum -12;
+  lv2:maximum 12;
+  lv2:portProperty lv2:integer;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 3;
+  lv2:symbol "octaves";
+  lv2:name "Octaves";
+  lv2:default 0;
+  lv2:minimum -3;
+  lv2:maximum 3;
+  lv2:portProperty lv2:integer;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 4;
+  lv2:symbol "crispness";
+  lv2:name "Crispness";
+  lv2:default 3;
+  lv2:minimum 0;
+  lv2:maximum 3;
+  lv2:portProperty lv2:integer;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 5;
+  lv2:symbol "form_pres";
+  lv2:name "Formant Preserving";
+  lv2:default 0;
+  lv2:minimum 0;
+  lv2:maximum 1;
+  lv2:portProperty lv2:integer, lv2:toggled;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 6;
+  lv2:symbol "faster";
+  lv2:name "Faster";
+  lv2:default 0;
+  lv2:minimum 0;
+  lv2:maximum 1;
+  lv2:portProperty lv2:integer, lv2:toggled;
+],
+[
+  a lv2:AudioPort, lv2:InputPort;
+  lv2:index 7;
+  lv2:symbol "input";
+  lv2:name "Input";
+  lv2:shortName "Input";
+],
+[
+  a lv2:AudioPort, lv2:OutputPort;
+  lv2:index 8;
+  lv2:symbol "output";
+  lv2:name "Output";
+  lv2:shortName "Output";
+].
+
+
+<http://www.breakfastquay.com/rubberband#Stereo>
+a lv2:Plugin, lv2:PitchPlugin;
+
+doap:name "Rubberband (Stereo)";
+doap:license <http://usefulinc.com/doap/licenses/gpl>;
+
+doap:developer [
+    foaf:name "Chris Cannam";
+    foaf:homepage <>;
+    foaf:mbox <>;
+];
+
+doap:maintainer [
+    foaf:name "MOD Team";
+    foaf:homepage <http://moddevices.com>;
+    foaf:mbox <mailto:devel@moddevices.com>;
+];
+
+mod:brand "MOD";
+mod:label "Rubberband (St.)";
+
+lv2:minorVersion 8;
+lv2:microVersion 2;
+rdfs:comment """
+Time-stretching and pitch-shifting plugin. Stereo version.
+""";
+
+lv2:port [
+  a lv2:ControlPort, lv2:OutputPort;
+  lv2:index 0;
+  lv2:symbol "latency";
+  lv2:name "Latency";
+  lv2:designation lv2:latency;
+  lv2:portProperty lv2:integer, lv2:reportsLatency;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 1;
+  lv2:symbol "cents";
+  lv2:name "Cents";
+  lv2:default 0;
+  lv2:minimum -100;
+  lv2:maximum 100;
+  lv2:portProperty lv2:integer;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 2;
+  lv2:symbol "semitones";
+  lv2:name "Semitones";
+  lv2:default 0;
+  lv2:minimum -12;
+  lv2:maximum 12;
+  lv2:portProperty lv2:integer;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 3;
+  lv2:symbol "octaves";
+  lv2:name "Octaves";
+  lv2:default 0;
+  lv2:minimum -3;
+  lv2:maximum 3;
+  lv2:portProperty lv2:integer;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 4;
+  lv2:symbol "crispness";
+  lv2:name "Crispness";
+  lv2:default 3;
+  lv2:minimum 0;
+  lv2:maximum 3;
+  lv2:portProperty lv2:integer;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 5;
+  lv2:symbol "form_pres";
+  lv2:name "Formant Preserving";
+  lv2:default 0;
+  lv2:minimum 0;
+  lv2:maximum 1;
+  lv2:portProperty lv2:integer, lv2:toggled;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 6;
+  lv2:symbol "faster";
+  lv2:name "Faster";
+  lv2:default 0;
+  lv2:minimum 0;
+  lv2:maximum 1;
+  lv2:portProperty lv2:integer, lv2:toggled;
+],
+[
+  a lv2:AudioPort, lv2:InputPort;
+  lv2:index 7;
+  lv2:symbol "input_l";
+  lv2:name "Input Left";
+],
+[
+  a lv2:AudioPort, lv2:OutputPort;
+  lv2:index 8;
+  lv2:symbol "output_l";
+  lv2:name "Output Left";
+],
+[
+  a lv2:AudioPort, lv2:InputPort;
+  lv2:index 9;
+  lv2:symbol "input_r";
+  lv2:name "Input Right";
+],
+[
+  a lv2:AudioPort, lv2:OutputPort;
+  lv2:index 10;
+  lv2:symbol "output_r";
+  lv2:name "Output Right";
+].
