@@ -124,17 +124,17 @@ doap:license <http://usefulinc.com/doap/licenses/gpl>;
 
 doap:developer [
     foaf:name "Chris Cannam";
-    foaf:homepage <>;
-    foaf:mbox <>;
+    foaf:homepage <http://www.all-day-breakfast.com/cannam/>;
+    foaf:mbox <mailto:chris.cannam@breakfastquay.com>;
 ];
 
 doap:maintainer [
-    foaf:name "MOD Team";
-    foaf:homepage <http://moddevices.com>;
-    foaf:mbox <mailto:devel@moddevices.com>;
+    foaf:name "falkTX";
+    foaf:homepage <http://falktx.com>;
+    foaf:mbox <mailto:falktx@falktx.com>;
 ];
 
-mod:brand "MOD";
+mod:brand "Chris Cannam";
 mod:label "Rubberband (St.)";
 
 lv2:minorVersion 8;
